@@ -24,7 +24,7 @@ public class DFC {
     private static TreeNode dfsIterative(TreeNode root, int target) {
         // Проверка на пустое дерево
         if (root == null) return null;
-        // Используем стек для хранения узлов, которые нужно посетить
+        // Используем двустороннюю очередь как стек
         ArrayDeque<TreeNode> stack = new ArrayDeque<>();
         stack.push(root); // Начинаем с корневого узла
         // Пока в стеке есть узлы для обработки
