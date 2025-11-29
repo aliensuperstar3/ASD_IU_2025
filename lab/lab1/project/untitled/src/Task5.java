@@ -11,29 +11,26 @@ public class Task5 {
         Scanner sc = new Scanner(System.in);
         System.out.print("Введите слово: ");
         String word = sc.nextLine();
-        if (ifIsogram(word)) {
+        if (isIsogram(word)) {
             System.out.println("Слово является изограммой");
         } else {
             System.out.println("Слово не является изограммой");
         }
     }
-    private static boolean ifIsogram(String word){
+    private static boolean isIsogram(String word){
         word = word.toLowerCase();
         if(word.isEmpty()){
            return true;
         }
-        boolean[] arr = new boolean[26];
+        boolean[] arr = new boolean[Character.MAX_VALUE+1];
         for(int i=0;i<word.length();i++){
             char ch = word.charAt(i);
-            if(ch < 'a' || ch > 'z'){
-                continue;
-            }
-            int ind = ch - 'a';
-            if(arr[ind]){
+            if(arr[ch]){
                 return false;
             }
-            arr[ind] = true;
+            arr[ch] = true;
         }
         return true;
     }
 }
+
